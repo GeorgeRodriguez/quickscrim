@@ -1,0 +1,2 @@
+class PartyChat < ApplicationRecord
+end

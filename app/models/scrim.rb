@@ -1,0 +1,2 @@
+class Scrim < ApplicationRecord
+end
