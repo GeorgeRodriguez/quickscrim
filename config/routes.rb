@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-          sessions: 'users/sessions'
-        }
-root to: "landing#index"
+  root to: "landing#index"
+        devise_for :users, controllers: { sessions: 'users/sessions' }
 end
