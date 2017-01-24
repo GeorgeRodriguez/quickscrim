@@ -1,2 +1,0 @@
-class PartyChat < ApplicationRecord
-end
