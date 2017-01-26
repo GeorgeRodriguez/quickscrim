@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :direct_messages, :through => :friendships
 
   has_secure_password
+  attr_reader :password_hash
   # users.password_hash in the database is a :string
   include BCrypt
 
