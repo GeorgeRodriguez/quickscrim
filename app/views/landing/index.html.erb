@@ -1,6 +1,18 @@
  <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  Signed in as <%= current_user.name %> | <%= link_to "Edit Account Info", edit_user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
-<h1>QuickScrim</h1>
+
+
+<div class="center jumbotron">
+  <h1>Welcome to the QuickScrim!</h1>
+
+  <h2>
+    This is the home page for the
+    sample application.
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-
+  post '/users/id/edit' => 'users#edit'
+  
+  resources :users
   root to: 'landing#index'
 end
