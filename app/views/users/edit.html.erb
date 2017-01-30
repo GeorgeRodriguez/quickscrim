@@ -17,8 +17,12 @@
 			<%= f.label :password_confirmation %>
 			<%= f.text_field :password_confirmation, class: 'form-control' %>
 
-			<%= f.submit "Update Info", class: "btn-primary" %>
-			<% end> %>
+			<%= f.submit "Update Info", class: "btn btn-primary" %>
+			<% end %>
+			<div class="gravatar_edit">
+	      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target="_blank">change</a>
+    </div>
 	</div>
 </div>
 

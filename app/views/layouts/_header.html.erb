@@ -6,7 +6,8 @@
       <% if current_user %>
         <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Account", edit_user_path(current_user) %></li>
+        <li><%= link_to "Account", user_path(current_user) %></li>
+        <li><%= link_to "Log Out", logout_path %></li>
       <% else %>
         <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "Help",   '#' %></li>
