@@ -11,4 +11,5 @@ where(“(friendships.sender_id = ? AND friendships.recipient_id =?)
  OR (friendships.sender_id = ? AND friendships.recipient_id =?)”,
   sender_id,recipient_id, recipient_id, sender_id)
  end
+ 
 end
