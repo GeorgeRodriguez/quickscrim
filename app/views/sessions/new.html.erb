@@ -1,16 +1,18 @@
 <h1>Login</h1>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		<%= form_for(:session, url: login_path) do |f| %>
-
-			<%= f.label :email %>
-			<%= f.email_field :email, class: 'form-control' %>
-
-			<%= f.label :password %>
-			<%= f.password_field :password, class: 'form-control' %>
-
-			<%= f.submit "Log in", class: "btn btn-primary" %>
-		<% end %>
+		<%= form_tag '/login' do %>
+		<%= label_tag 'Email' %><br> 
+		<%= text_field_tag :email, nil, class: 'form-control', placeholder: 'Enter E-mail Here' %><br><br>
+  	<%= label_tag 'Password' %>
+   	<%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Enter Password Here' %>
+   <%= check_box_tag :remember_me %>
+   <span>Remember me on this computer</span><br><br>
+   <%= submit_tag "Log In", class: 'btn btn-primary' %><br>
+  <% end %><br>
 		<p>New User? <%= link_to "Sign Up Now!", signup_path %></p>
 	</div>
 </div>
+
+
+
