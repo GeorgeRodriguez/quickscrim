@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127195318) do
-
-  create_table "conversations", force: :cascade do |t|
-  end
+ActiveRecord::Schema.define(version: 20170127211831) do
 
   create_table "direct_messages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "body"
+    t.integer  "friendships_id"
+    t.integer  "users_id"
+    t.boolean  "read",           default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["friendships_id"], name: "index_direct_messages_on_friendships_id"
+    t.index ["users_id"], name: "index_direct_messages_on_users_id"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -27,28 +30,12 @@ ActiveRecord::Schema.define(version: 20170127195318) do
     t.integer  "recipient_id"
   end
 
-  create_table "landings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "party_chats", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "scrimmages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "remember_digest"
   end
 
 end
