@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post '/users/id/edit' => 'users#edit'
   
   resources :users
+  resources :account_activations, only: [:edit]
   root to: 'landing#index'
 end
