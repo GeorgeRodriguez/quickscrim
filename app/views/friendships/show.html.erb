@@ -2,12 +2,12 @@
  <h3>Mailbox</h3>
  <div class=”ui list”>
   <div class=”item”>
-   <% friendships.each do |friendship| %>
-   <% if friendship.sender_id == current_user.id ||      friendship.recipient_id == current_user.id %>
-    <% if friendship.sender_id == current_user.id %>
-      <% recipient = User.find(friendship.recipient_id) %>
+   <% @friendships.each do |f| %>
+   <% if f.sender_id == current_user.id || f.recipient_id == current_user.id %>
+    <% if f.sender_id == current_user.id %>
+      <% recipient = User.find(f.recipient_id) %>
     <% else %>
-      <% recipient = User.find(friendship.sender_id) %>
+      <% recipient = User.find(f.sender_id) %>
     <% end %>
     <%= link_to recipient.first_name,   friendship_messages_path(friendship)%>
    <% end %>
@@ -21,7 +21,7 @@
    <% @users.each do |user| %>
     <% if user.id != current_user.id %>
      <div class=”item”>
-   <%= user.first_name %> <%= link_to ‘Message me!’, friendships_path(sender_id: current_user.id, recipient_id: user.id), method: ‘post’%>
+   <%= user.name %> <%= link_to 'Message me!', friendships_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
  </div>
   <% end %>
  <% end %>

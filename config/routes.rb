@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :friendships do
-  resources :direct_messages
+    resources :direct_messages
  end
 
   # root to: 'users#new'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   post '/users/id/edit' => 'users#edit'
-  
+
   resources :users
   root to: 'landing#index'
 end

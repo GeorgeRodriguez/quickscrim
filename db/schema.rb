@@ -1,6 +1,6 @@
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
-# incrementally modify your database, and then regenerate this schema definition.
+# incrementally modify your dsatabase, and then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your
 # database schema. If you need to create the application database on another
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170127211831) do
     t.datetime "updated_at",   null: false
     t.integer  "sender_id"
     t.integer  "recipient_id"
-<<<<<<< HEAD
   end
 
   create_table "landings", force: :cascade do |t|
@@ -44,8 +43,6 @@ ActiveRecord::Schema.define(version: 20170127211831) do
   create_table "scrimmages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
->>>>>>> direct_messages
   end
 
   create_table "users", force: :cascade do |t|
