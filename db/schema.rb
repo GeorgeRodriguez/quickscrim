@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170127211831) do
     t.datetime "updated_at",   null: false
     t.integer  "sender_id"
     t.integer  "recipient_id"
+<<<<<<< HEAD
   end
 
   create_table "landings", force: :cascade do |t|
@@ -43,6 +44,8 @@ ActiveRecord::Schema.define(version: 20170127211831) do
   create_table "scrimmages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+>>>>>>> direct_messages
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,7 +54,6 @@ ActiveRecord::Schema.define(version: 20170127211831) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "remember_digest"
   end
 
 end
