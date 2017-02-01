@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token 
   # :activation_token
   has_many :scrimmages
+  has_many :shout_outs, dependent: :destroy
   has_many :friendships
   has_many :direct_messages, :through => :friendships
   before_save :downcase_email

@@ -15,4 +15,14 @@
   <%= @user.email %>
 </p>
 
+<div class="col-md-8">
+    <% if @user.shout_outs.any? %>
+      <h3>Shout Outs (<%= @user.shout_outs.count %>)</h3>
+      <ol class="microposts">
+        
+      </ol>
+      <%= will_paginate @shout_outs %>
+    <% end %>
+  </div>
+
 <%= link_to "Edit Account Info?", edit_user_path(current_user) %>
