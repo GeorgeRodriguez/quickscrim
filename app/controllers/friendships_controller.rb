@@ -23,7 +23,7 @@ class FriendshipsController < ApplicationController
    @friendship = Friendship.create!(friendship_params)
   end
 
-redirect_to friendship_messages_path(@friendship)
+redirect_to friendship_direct_messages_path(@friendship)
 
 end
 

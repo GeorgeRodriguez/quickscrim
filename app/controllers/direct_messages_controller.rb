@@ -1,34 +1,34 @@
 class DirectMessagesController < ApplicationController
-  before_action do
-   @friendship = Friendship.find(params[:friendships_id])
-  end
+before_action do
+@friendship = Friendship.find(params[:friendship_id])
+end
 
 def index
- @direct_messages = @friendship.messages
+ @direct_messages = @friendship.direct_messages
   if @direct_messages.length > 10
    @over_ten = true
    @direct_messages = @direct_messages[-10..-1]
   end
   if params[:m]
    @over_ten = false
-   @direct_messages = @friendship.messages
+   @direct_messages = @friendship.direct_messages
   end
  if @direct_messages.last
   if @direct_messages.last.user_id != current_user.id
    @direct_messages.last.read = true;
   end
  end
-@direct_message = @friendship.messages.new
+@direct_message = @friendship.direct_messages.new
  end
 
 def new
- @direct_message = @friendship.messages.new
+ @direct_message = @friendship.direct_messages.new
 end
 
 def create
- @direct_message = @friendship.messages.new(direct_message_params)
+ @direct_message = @friendship.direct_messages.new(direct_message_params)
  if @direct_message.save
-  redirect_to friendship_messages_path(@friendship)
+  redirect_to friendship_direct_messages_path(@friendship)
  end
 end
 
