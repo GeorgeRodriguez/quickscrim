@@ -19,9 +19,9 @@
     <% if @user.shout_outs.any? %>
       <h3>Shout Outs (<%= @user.shout_outs.count %>)</h3>
       <ol class="microposts">
-        
+        <%= render 'shout_out/shout_out' %>
       </ol>
-      <%= will_paginate @shout_outs %>
+      <%= will_paginate @shoutouts %>
     <% end %>
   </div>
 

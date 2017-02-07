@@ -1,0 +1,11 @@
+<% @user.shout_outs.each do |shout_out| %>
+	<li id="shoutout-<%= shout_out.id %>">
+		<%= link_to gravatar_for(@user, size: 50), @user %>
+		<span class="user"><%= link_to @user.name, @user %></span>
+		<span class="content"><%= shout_out.content %></span>
+		<span class="timestamp"> Posted <%= time_ago_in_words(shout_out.created_at) %> ago. </span>
+	</li>
+<% end %>
+
+
+

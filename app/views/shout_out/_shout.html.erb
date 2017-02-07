@@ -1,8 +1,0 @@
-<li id="shoutout-<%= shout_out.id %>">
-	<%= link_to gravatar_for(shout_out.user, size: 50), shout_out.user %>
-	<span class="user"><%= link_to shout_out.user.name, shout_out.user %></span>
-	<span class="content"><%= shout_out.content %></span>
-	<span class="timestamp">
-		Posted <%= time_ago_in_words(shout_out.created_at) %> ago.
-	</span>
-</li>

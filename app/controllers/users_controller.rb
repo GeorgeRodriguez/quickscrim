@@ -8,8 +8,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @shout_outs = @user.shout_outs.paginate(page: params[:page])
+    @shoutouts = @user.shout_outs.paginate(page: params[:page])
+    # @shoutouts.user = User.find(params[:id]).name
   end
+
   def create
     @user = User.new(user_params)
     if @user.save
