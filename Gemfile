@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'hirb'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "rails-erd"
